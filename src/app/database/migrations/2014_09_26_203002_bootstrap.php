@@ -17,13 +17,27 @@ class Bootstrap extends Migration {
 		Schema::create('users', function($table) {
 			$table->bigIncrements('id');
 			$table->string('key',45);
-			$table->string('password',45);
-			$table->string('email',45)->unique();//Email index
+			$table->string('name',45);
+            $table->string('username',100)->unique();
+			$table->string('email',100)->unique();;//Email index
+			$table->string('password');
+			$table->rememberToken();//Para sessiones
 			$table->enum('status',array('active','inactive','delete'));//Enum
 		   	$table->datetime('pass_creation');
 			$table->datetime('pass_modify');
 			$table->string('user_creation',45);
 			$table->string('user_modify',45);
+			$table->timestamps();
+		});
+		//Crear la tabla de Informacion de Usuarios
+		Schema::create('info_users', function($table) {
+			$table->bigIncrements('id');
+			$table->bigInteger('user_id')->unsigned(); //Unsigned Necesario para Foreign
+            $table->string('first_name',100);//Username index
+            $table->string('last_name',100);//Username index
+            $table->string('direction',255);//Username index
+            $table->integer('telephone');//Username index
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
 		});
 
@@ -59,34 +73,12 @@ class Bootstrap extends Migration {
 			$table->timestamps();
 		});
 
-
-		//Crear la tabla de Modulos
-		Schema::create('modules', function($table) {
-			$table->bigIncrements('id');
-			$table->string('name',45);
-			$table->timestamps();
-		});
-
-
-		//Crear la tabla de SubModulos
-		Schema::create('submodules', function($table) {
-			$table->bigIncrements('id');
-			$table->string('name',45);
-			$table->string('icon',255);
-			$table->bigInteger('module_id')->unsigned(); //Unsigned Necesario para Foreign
-			$table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
-			$table->timestamps();
-		});
-
 		//Crear la tabla de Funcionalidades
 		Schema::create('functionality', function($table) {
 			$table->bigIncrements('id');
 			$table->string('name',45);
 			$table->string('icon',255);
 			$table->integer('order');
-			$table->string('menu_url',45);
-			$table->bigInteger('submodules_id')->unsigned();
-			$table->foreign('submodules_id')->references('id')->on('submodules');
 			$table->timestamps();
 		});
 
@@ -151,12 +143,11 @@ class Bootstrap extends Migration {
 		Schema::drop('permission_functionality');
 
 		//Eliminar tablas principales
-		Schema::drop('modules');
-		Schema::drop('submodules');
 		Schema::drop('functionality');
 		Schema::drop('permissions');
-		Schema::drop('clients');
 		Schema::drop('profiles');
+		Schema::drop('clients');
+		Schema::drop('info_users');
 		Schema::drop('users');
 	}
 
