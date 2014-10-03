@@ -26,9 +26,8 @@ class ProfilesTableSeeder extends Seeder {
             'name'              => 'Administrator Permisos',
             'description'       => 'Asigna, Crear, Elimina y Modifica Permisos',
             'status'            => 'active'
-        )); 
-        //PERFILES DE UN EMPLEADO
-        ));  DB::table('profiles')->insert(array(
+        ));  
+        DB::table('profiles')->insert(array(
             'name'              => 'Empleado Consulta',
             'description'       => 'Consulta de Inventario',
             'status'            => 'active'

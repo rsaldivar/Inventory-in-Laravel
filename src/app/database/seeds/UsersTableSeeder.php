@@ -17,5 +17,10 @@ class UsersTableSeeder extends Seeder {
             'name'=> 'Administrator',
             'password' => Hash::make('adminadmin') // Hash::make() nos va generar una cadena con nuestra contraseña encriptada
         ));
+        User::create(array(
+            'username'  => 'test',
+            'name'=> 'test',
+            'password' => Hash::make('test') // Hash::make() nos va generar una cadena con nuestra contraseña encriptada
+        ));
     }
 }

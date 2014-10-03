@@ -154,6 +154,10 @@
 
     <div class="not-a-member">
         Not a member? <a href="pages-signup.html">Sign up now</a>
+        <br>
+        @if(Session::has('mensaje_error'))
+            {{ Session::get('mensaje_error') }}
+        @endif
     </div>
 
 <!-- Get jQuery from Google CDN -->
