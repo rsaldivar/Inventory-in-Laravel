@@ -28,6 +28,8 @@
 
 <body class="theme-default main-menu-animated">
 
+<script>var init = [];</script>
+
 <div id="main-wrapper">
 
 
@@ -129,14 +131,39 @@
 		
 		<div class="row">
 			<div class="col-sm-12">
+
+				<script>
+					init.push(function () {
+						$('#jq-datatables-example').dataTable();
+						$('#jq-datatables-example_wrapper .table-caption').text('Some header text');
+						$('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
+					});
+				</script>
+				<!-- / Javascript -->
+
 				<div class="panel">
 					<div class="panel-heading">
 						<span class="panel-title">Productos</span>
 					</div>
 					<div class="panel-body">
-						
-						TABLA DE PRODUCTOS
+						<div class="table-primary">
+							<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+								<thead>
+									<tr>
+										<th>Rendering engine</th>
+										<th>Browser</th>
+										<th>Platform(s)</th>
+										<th>Engine version</th>
+										<th>CSS grade</th>
+									</tr>
+								</thead>
+								<tbody>
 
+									
+								</tbody>
+							</table>
+						</div> 
+						<!-- table primary -->
 					</div>
 				</div>
 			</div>
@@ -161,5 +188,11 @@
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/pixel-admin.min.js"></script>
 
+<script type="text/javascript">
+	init.push(function () {
+		// Javascript code here
+	})
+	window.PixelAdmin.start(init);
+</script>
 </body>
 </html>

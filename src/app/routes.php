@@ -31,7 +31,19 @@ Route::group(array('before' => 'auth'), function()
     {
         return View::make('hello');
     });
+
     // Esta ruta nos servirá para cerrar sesión.
     Route::get('logout', 'AuthController@logOut');
+
+
+    //RUTAS DE GESTION DE SISTEMAS - Perfiles y Permisos
+    Route::get('system/profiles', 'SysController@index');
+	Route::get('system/permisos', 'SysController@create');
+
+	//REST FULL  -- Actions Handled By Resource Controller | http://laravel.com/docs/4.2/controllers
+    Route::resource('users', 'UserController');
+    Route::resource('clients', 'UserController');
+    Route::resource('products', 'UserController');
+    Route::resource('stock', 'UserController');
 });
 
