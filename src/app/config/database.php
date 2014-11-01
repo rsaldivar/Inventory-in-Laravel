@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '0.0.0.0',//$IP for c9.io = 0.0.0.0
 			'database'  => 'evek_laravel',
-			'username'  => 'root',
-			'password'  => 'adminadmin',
+			'username'  => 'rsaldivar',//$C9_USER for c9.io
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

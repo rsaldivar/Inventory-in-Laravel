@@ -102,12 +102,12 @@
                 </div> <!-- / .signin-text -->
 
                 <div class="form-group w-icon">
-                    <input type="text" name="username" id="username_id" class="form-control input-lg" placeholder="Username or email">
+                    <input type="text" name="username" id="username_id" class="form-control input-lg" placeholder="Username or Email (test)">
                     <span class="fa fa-user signin-form-icon"></span>
                 </div> <!-- / Username -->
 
                 <div class="form-group w-icon">
-                    <input type="password" name="password" id="password_id" class="form-control input-lg" placeholder="Password">
+                    <input type="password" name="password" id="password_id" class="form-control input-lg" placeholder="Password (test)">
                     <span class="fa fa-lock signin-form-icon"></span>
                 </div> <!-- / Password -->
 

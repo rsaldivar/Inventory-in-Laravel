@@ -10,12 +10,12 @@ class ProductController extends BaseController {
      */
     public function index()
     {
-        // get all the users
-        $users = Product::all();
+        // get all the products
+        $products = Product::all();
 
-        // load the view and pass the users
+        // load the view and pass the products
         return View::make('products.index')
-            ->with('users', $users);
+            ->with('products', $products);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductController extends BaseController {
      */
     public function create()
     {
-        // load the create form (app/views/users/create.blade.php)
+        // load the create form (app/views/products/create.blade.php)
         return View::make('products.create');
     }
 
