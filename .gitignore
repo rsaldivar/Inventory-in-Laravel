@@ -1,2 +1,48 @@
+# -- Entorno 
 .c9/
 .c9/metadata
+
+# -- Composer -----------------------------------------
+composer.phar
+
+
+# -- PHPUnit ------------------------------------------
+app/phpunit.xml  
+
+
+# -- Editores -----------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+
+Session.vim
+.netrwhist
+
+# sublimetext
+/*.sublime-project /*.sublime-project
+*.sublime-workspace
+
+
+# Linux
+.*
+!.gitignore
+!.htaccess
+*~
+
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+.Spotlight-V100
+.Trashes
+
+# -- Sistemas Operativos ------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
